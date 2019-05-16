@@ -1,25 +1,35 @@
 package ua.lviv.iot.Db_Lab8.managers;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import ua.lviv.iot.Db_Lab8.models.Fuel;
 import ua.lviv.iot.Db_Lab8.models.WheelFormula;
 
-@Entity
+@Entity()
+@Table(name = "skiresortmachinery")
 class SkiResortMachinery {
 
+    
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-
+    
+    @Column(name = "name")
     private String name;
+    @Column(name = "producer")
     private String producer;
+    @Column(name = "fuelPerHour")
     private double fuelPerHour;
+    @Column(name = "mileage")
     private double mileage;
+    @Column(name = "typeOfFuel")
     private Fuel typeOfFuel;
+    @Column(name = "wheelFormula")
     private WheelFormula wheelFormula;
 
     public SkiResortMachinery() {

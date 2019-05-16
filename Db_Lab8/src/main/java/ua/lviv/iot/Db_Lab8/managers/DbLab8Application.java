@@ -17,13 +17,10 @@ public class DbLab8Application {
 
     @Bean
     public CommandLineRunner demo(SkiResortMachineryRepository repository) {
-        System.out.println("vassa");
         return (args) -> {
-            repository.save(new SkiResortMachinery("Name1", "Producer", 15.6, 41.6, Fuel.DIESEL, WheelFormula.FOUR_FOUR ));
-            repository.save(new SkiResortMachinery("Name2", "Producer", 25.6, 42.6, Fuel.KEROSENE, WheelFormula.FOUR_TWO ));
-            repository.save(new SkiResortMachinery("Name3", "Producer", 35.6, 43.6, Fuel.GAZOLINE, WheelFormula.TWO_TWO ));
-
-            repository.findAll().forEach(System.out::println);
+            repository.save(new SkiResortMachinery("Snow Generator R5", "SMI", 15.6, 41.6, Fuel.DIESEL, WheelFormula.FOUR_FOUR ));
+            repository.save(new SkiResortMachinery("Swivel Mast Yg56", "SMI", 25.6, 42.6, Fuel.KEROSENE, WheelFormula.FOUR_TWO ));
+            repository.save(new SkiResortMachinery("Snow Tower E6", "SMI", 35.6, 43.6, Fuel.GAZOLINE, WheelFormula.TWO_TWO ));
         };
         
 
