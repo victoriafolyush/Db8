@@ -36,7 +36,15 @@ class SkiResortMachinery {
 
     }
 
-    public SkiResortMachinery(String name, String producer, double fuelPerHour, double mileage, Fuel typeOfFuel,
+    public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public SkiResortMachinery(String name, String producer, double fuelPerHour, double mileage, Fuel typeOfFuel,
             WheelFormula wheelFormula) {
         super();
         this.name = name;
