@@ -22,12 +22,12 @@ public class SkiResortMachineryController {
 		return (List<SkiResortMachinery>) repository.findAll();
 	}
 
-	@GetMapping("/machineries/(id)")
+	@GetMapping("/machineries/{id}")
 	public SkiResortMachinery getMachinery(@PathVariable Integer id) {
 		return repository.findById(id).get();
 	}
 
-	@PutMapping("/machineries/(id)")
+	@PutMapping("/machineries/{id}")
 	public SkiResortMachinery putMachinery(@RequestBody SkiResortMachinery newMachinery, @PathVariable Integer id) {
 		return repository.findById(id).map(machinery -> {
 			machinery.setName(newMachinery.getName());
@@ -43,12 +43,12 @@ public class SkiResortMachineryController {
 		});
 	}
 
-	@PostMapping("/machineries/(id)")
+	@PostMapping("/machineries/{id}")
 	public SkiResortMachinery postMachienry(@RequestBody SkiResortMachinery machinery) {
 		return repository.save(machinery);
 	}
 
-	@DeleteMapping("/machineries/(id)")
+	@DeleteMapping("/machineries/{id}")
 	public SkiResortMachinery deleteMachinery(@PathVariable Integer id) {
 		SkiResortMachinery idOfObject = getMachinery(id);
 		repository.deleteById(id);
